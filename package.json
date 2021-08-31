@@ -1,6 +1,6 @@
 {
   "name": "alpine-intersect-animate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An alpine.js plugin you can use to animate DOM once it enter the viewport",
   "main": "src/index.js",
   "scripts": {
