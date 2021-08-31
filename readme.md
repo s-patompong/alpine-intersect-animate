@@ -4,5 +4,7 @@ This is a library that you can use to animate your DOM once it enters the viewpo
 Once you've included animate.css to your website. Use x-intersect-animate on the dom that you want to animate it. You don't need to enter the full animation name, just its keyword is fine.
 
 ```html
-<div x-data x-intersect-animate="fadeInUp">I'm gonna be animated once I enter the viewport</div>
+<div x-data x-intersect-animate="fadeInUp">
+    I'm gonna be animated once I enter the viewport
+</div>
 ```
