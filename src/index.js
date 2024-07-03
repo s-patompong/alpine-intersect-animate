@@ -12,9 +12,9 @@ export default function (Alpine) {
         expression.split(" ").forEach(c => classes.push(`animate__${c}`));
         el.classList.add(...classes);
 
-        observer.disconnect();
+        observer.disconnect()
       })
-    })
+    }, { threshold: getThreshold(modifiers) })
 
     observer.observe(el);
 
@@ -22,4 +22,23 @@ export default function (Alpine) {
       observer.disconnect();
     });
   });
+}
+
+
+function getThreshold(modifiers) {
+  if (modifiers.includes('full')) {
+      return 0.99
+  }
+
+  if (modifiers.includes('half')) {
+      return 0.5
+  }
+
+  if (! modifiers.includes('threshold')) {
+      return 0
+  }
+
+  const threshold = modifiers[modifiers.indexOf('threshold') + 1]
+
+  return threshold === '1' ? 1 : Number(`.${threshold}`)
 }
